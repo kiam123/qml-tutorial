@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ListViewOrientation.qml</file>
+    </qresource>
+</RCC>

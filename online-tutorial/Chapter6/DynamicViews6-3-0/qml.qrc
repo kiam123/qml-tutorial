@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ListViewWidth.qml</file>
+        <file>GridViewWidth.qml</file>
+    </qresource>
+</RCC>
