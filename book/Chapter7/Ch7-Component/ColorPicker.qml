@@ -1,0 +1,36 @@
+import QtQuick 2.0
+
+Rectangle {
+    id: colorPicker;
+    width: 50;
+    height: 30;
+    signal colorPicked(color clr);
+
+    function configureBorder() {
+        colorPicker.border.width = colorPicked.focus ? 2:0;
+        colorPicker.border.color = colorPicked.focus ? "#90D750":"#808080";
+    }
+
+    MouseArea {
+        anchors.fill: parent;
+        onClicked: {
+            colorPicker.colorPicked(colorPicker.color);
+            mouse.accepted = true;
+            colorPicker.focus = true;
+        }
+    }
+    Keys.onReturnPressed: {
+        colorPicker.colorPicked(colorPicker.color);
+        event.accepted = true;
+    }
+    Keys.onSpacePressed: {
+        colorPicker.colorPicked(colorPicker.color);
+        event.accepted = true;
+    }
+    onFocusChanged: {
+        configureBorder();
+    }
+    Component.onCompleted: {
+        configureBorder();
+    }
+}
